@@ -25,9 +25,11 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
+                    <!--
                     <systemPropertyVariables>
                         <testarg>${testArg}</testarg>
                     </systemPropertyVariables>
+                    -->
 				</configuration>
 			</plugin>
 		</plugins>
