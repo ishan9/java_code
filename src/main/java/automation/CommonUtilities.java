@@ -27,7 +27,6 @@ public class CommonUtilities {
     	String fs = System.getProperty("file.separator");
     	String timeStamp = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(new Date());
     	String filePath = System.getProperty("user.dir") + fs +  "screenshots" + fs + timeStamp +".png";
-    	System.out.println(filePath);
     	FileUtils.copyFile(scrnFile, new File(filePath));
     }
 }
