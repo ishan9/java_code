@@ -2,28 +2,24 @@ package tests;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.Assert;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import automation.CommonUtilities;
 import pages.HomePage;
 import pages.LoginPage;
 
 import org.testng.annotations.DataProvider;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 
-public class TestsLoginPage {
-	WebDriver driver;
+public class TestsLoginPage extends CommonUtilities {
 	LoginPage obj_pageLogin;
 	HomePage obj_pageHome;
 	
 	@BeforeMethod
 	public void login_window() {
-
-    	driver = new FirefoxDriver();
-    	driver.get("https://orangehrm-demo-6x.orangehrmlive.com/");
-    	driver.manage().window().maximize();
-    	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver = initializeDriver();
     	obj_pageLogin = new LoginPage(driver);
 	}
 	@AfterMethod
@@ -32,7 +28,7 @@ public class TestsLoginPage {
 	}
 	
 	@Test(dataProvider="getData")
-	public void doTesting(String username, String password, String ExpectedResult) {
+	public void doTesting(String username, String password, String ExpectedResult) throws IOException {
 		obj_pageLogin.loginToOrangeHRM(username, password);
 		obj_pageHome = new HomePage(driver);
     	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -40,6 +36,7 @@ public class TestsLoginPage {
     	String accountName = obj_pageHome.getAccountName();
     	System.out.println("Account name:"+accountName);
     	Assert.assertTrue(accountName.equals(ExpectedResult));
+    	getScreenshot();
 	}
 	
 	@DataProvider
@@ -60,4 +57,5 @@ public class TestsLoginPage {
 		
 		return data;
 	}
+	
 }
