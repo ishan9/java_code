@@ -1,10 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.mycompany.automation</groupId>
-  <artifactId>web-automation</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <name>Orange HRM Demo site tests</name>
-  <description>Web Automation using Selenium Java Eclipse TestNG Maven and Jenkins</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.mycompany.automation</groupId>
+	<artifactId>web-automation</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>Orange HRM Demo site tests</name>
+	<description>Web Automation using Selenium Java Eclipse TestNG Maven and Jenkins</description>
 	<build>
 		<plugins>
 			<plugin>
@@ -25,28 +26,30 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
-                    <!--
-                    <systemPropertyVariables>
-                        <testarg>${testArg}</testarg>
-                    </systemPropertyVariables>
-                    -->
+					<!-- <systemPropertyVariables> <testarg>${testArg}</testarg> </systemPropertyVariables> -->
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>  
-  <dependencies>
-  
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>6.11</version>
-      <scope>test</scope>
-    </dependency>
+	</build>
+	<dependencies>
 
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>2.53.0</version>    
-    </dependency>
-  </dependencies>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.11</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.53.1</version>
+		</dependency>
+	</dependencies>
 </project>
