@@ -5,6 +5,7 @@ import org.testng.Assert;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+import java.net.MalformedURLException;
 
 import automation.CommonUtilities;
 import pages.HomePage;
@@ -18,7 +19,7 @@ public class TestsLoginPage extends CommonUtilities {
 	HomePage obj_pageHome;
 	
 	@BeforeMethod
-	public void login_window() {
+	public void login_window()  throws MalformedURLException{
 		driver = initializeDriver();
     	obj_pageLogin = new LoginPage(driver);
 	}
