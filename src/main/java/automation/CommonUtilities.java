@@ -9,6 +9,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -22,8 +27,9 @@ public class CommonUtilities {
     public WebDriver driver;
     public static List<String []> csvDataList;
     String fs = System.getProperty("file.separator");   
-    public WebDriver initializeDriver() {
-    	driver = new FirefoxDriver();
+    public WebDriver initializeDriver()  throws MalformedURLException {
+    	//driver = new FirefoxDriver();
+	driver = new RemoteWebDriver (new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.firefox());
     	driver.get("https://orangehrm-demo-6x.orangehrmlive.com/auth/login");
     	driver.manage().window().maximize();
     	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
