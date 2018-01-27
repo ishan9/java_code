@@ -1,7 +1,8 @@
 package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 	WebDriver driver;
@@ -13,6 +14,8 @@ public class HomePage {
 		this.driver = driver;
 		//Switch to basic frame
 		driver.switchTo().frame(driver.findElement(idNonCoreFrame));
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+                wait.until(ExpectedConditions.visibilityOfElementLocated(xpathAccountName));
 	}
 	
 	public String getAccountName(){
