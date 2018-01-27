@@ -29,7 +29,7 @@ public class CommonUtilities {
     String fs = System.getProperty("file.separator");   
     public WebDriver initializeDriver()  throws MalformedURLException {
     	//driver = new FirefoxDriver();
-	driver = new RemoteWebDriver (new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.firefox());
+	driver = new RemoteWebDriver (new URL("http://sel4444:4444/wd/hub"), DesiredCapabilities.firefox());
     	driver.get("https://orangehrm-demo-6x.orangehrmlive.com/auth/login");
     	driver.manage().window().maximize();
     	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
