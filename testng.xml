@@ -3,6 +3,7 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
+	<!--Adding a comment here-->
       <class name="tests.TestsLoginPage"/>
     </classes>
   </test> <!-- Test -->
