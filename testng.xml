@@ -4,7 +4,7 @@
   <test name="Test">
     <classes>
 	<!--Adding a comment here-->
-      <class name="tests.TestsLoginPage"/>
+	  <class name="tests.TestsLoginPage11234"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
