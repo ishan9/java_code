@@ -4,6 +4,7 @@
   <test name="Test">
     <classes>
 	<!--Adding a comment here-->
+	<!--Additions from feature 1 branch-->
       <class name="tests.TestsLoginPage"/>
     </classes>
   </test> <!-- Test -->
